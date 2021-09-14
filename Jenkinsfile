@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Pull Latest Image"){
             steps{
-                sh "docker pull sritaj/selenium-docker"
+                sh "docker pull sritaj/selenium_docker"
             }
         }
         stage("Start Grid"){
