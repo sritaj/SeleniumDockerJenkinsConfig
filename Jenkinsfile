@@ -8,7 +8,7 @@ pipeline{
         }
         stage("Run Test"){
             steps{
-                sh "docker-compose up flight-details-test registration-confirmation-test user-registration-test"
+                sh "docker-compose up flight-details-test-module registration-confimration-test-module user-registration-test-module"
             }
         }
     }
