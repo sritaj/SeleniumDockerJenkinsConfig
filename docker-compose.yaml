@@ -1,0 +1,51 @@
+version: "3"
+services: 
+    hub:
+        image: selenium/hub:latest
+    chrome:
+        image: selenium/node-chrome:latest
+        shm_size: '1gb'
+        depends_on: 
+            - hub
+        environment: 
+            - HUB_HOST=hub
+    firefox:
+        image: selenium/node-firefox:latest
+        shm_size: '1gb'
+        depends_on: 
+            - hub
+        environment: 
+            - HUB_HOST=hub
+    flight-details-test-module:
+        image: sritaj/selenium-project
+        depends_on: 
+            - chrome
+            - firefox
+        environment: 
+            - BROWSER=Chrome
+            - HUB_HOST=hub
+            - MODULE=flight-details-test.xml
+        volumes:
+            - /Users/sritaj/Documents/Programs/SeleniumProjects/output
+    registration-confimration-test-module:
+        image: sritaj/selenium-project
+        depends_on: 
+            - chrome
+            - firefox
+        environment: 
+            - BROWSER=Chrome
+            - HUB_HOST=hub
+            - MODULE=registration-confimration-test.xml
+        volumes:
+            - /Users/sritaj/Documents/Programs/SeleniumProjects/output
+    user-registration-test-module:
+        image: sritaj/selenium-project
+        depends_on: 
+            - chrome
+            - firefox
+        environment: 
+            - BROWSER=Chrome
+            - HUB_HOST=hub
+            - MODULE=user-registration-test.xml
+        volumes:
+            - /Users/sritaj/Documents/Programs/SeleniumProjects/output
