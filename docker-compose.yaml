@@ -26,7 +26,7 @@ services:
             - HUB_HOST=hub
             - MODULE=flight-details-test.xml
         volumes:
-            - /Users/sritaj/Documents/Programs/SeleniumProjects/output
+            - /Users/sritaj/Documents/Programs/SeleniumProjects/output/flight-details:/usr/share/udemy/test-output
     registration-confimration-test-module:
         image: sritaj/selenium-project
         depends_on: 
@@ -37,7 +37,7 @@ services:
             - HUB_HOST=hub
             - MODULE=registration-confimration-test.xml
         volumes:
-            - /Users/sritaj/Documents/Programs/SeleniumProjects/output
+            - /Users/sritaj/Documents/Programs/SeleniumProjects/output/registration-confirmation:/usr/share/udemy/test-output
     user-registration-test-module:
         image: sritaj/selenium-project
         depends_on: 
@@ -48,4 +48,4 @@ services:
             - HUB_HOST=hub
             - MODULE=user-registration-test.xml
         volumes:
-            - /Users/sritaj/Documents/Programs/SeleniumProjects/output
+            - /Users/sritaj/Documents/Programs/SeleniumProjects/output/user-registration:/usr/share/udemy/test-output
